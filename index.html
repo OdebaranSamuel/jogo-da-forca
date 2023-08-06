@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>Jogo da forca</title>
+</head>
+<body>
+    <h1>JOGO DA FORCA</h1>
+ 
+
+    <main class="container">
+        <div class="palavras">
+            <p>samuel</p>
+            <p>samuel</p>
+            <p>samuel</p>
+            <p>samuel</p>
+            <p>samuel</p>
+            <p>samuel</p>
+            <p>samuel</p>
+            <p>samuel</p>
+        </div>
+        <svg width="400" height="500" class="svg"> 
+            <line x1="0" y1="400" x2="400" y2="400" style="stroke:#8FACC0;stroke-width:3"></line>
+            <line x1="50" y1="400" x2="50" y2="100" style="stroke:#8FACC0;stroke-width:3"></line>
+            <line x1="50" y1="100" x2="150" y2="100" style="stroke:#8FACC0;stroke-width:3"></line>
+            <line x1="150" y1="100" x2="150" y2="150" style="stroke:#8FACC0;stroke-width:3"></line>
+            <circle class="cabeca" cx="150" cy="150" r="20" fill="white" stoke-width="5"></circle>
+            <line class="tronco" x1="150" y1="170" x2="150" y2="250" style="stroke:rgb(255, 255, 255);stroke-width:3"></line>
+            <line class="braco braco-esquerdo" x1="150" y1="190" x2="120" y2="230" style="stroke:rgb(255, 255, 255);stroke-width:3"></line>
+            <line class="braco braco-direito" x1="150" y1="190" x2="180" y2="230" style="stroke:rgb(255, 255, 255);stroke-width:3"></line>
+            <line class="perna perna-esquerda" x1="150" y1="250" x2="120" y2="320" style="stroke:rgb(255, 255, 255);stroke-width:3"></line>
+            <line class="perna perna-direita" x1="150" y1="250" x2="170" y2="320" style="stroke:rgb(255, 255, 255);stroke-width:3"></line>
+        </svg>
+        <form>
+            <label for="input-letra">Digite uma letra ou a palavra correta</label>
+            <input class="letra" type="text" id="input-letra">
+            <input class="submit" type="submit">
+        </form>
+      
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
