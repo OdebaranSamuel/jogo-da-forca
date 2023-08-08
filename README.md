@@ -10,9 +10,15 @@ utilizei o método Math.floor, e o método Math.random para acessar os elementos
 
 A cada input digitado errado pelo usuário aparace uma parte do corpo do personagem na forca.
 
------>Ainda tenho que verificar letras iguais e verificar o final do jogos quando a lista de letras certas for igual a palavra correta.
+Para fazer o desenho do boneco na forca foi utilizado a tag SVG no HTML, essa  tag nada mais é que vetores onde defino as posições iniciais
+e posições finais.
 
----->Tenho que verificar quando o usuário digitar duas letras iguais quando errar ou quando acertar para assim por um aviso na tela
-dizendo que o usuário já utilizou essa letra digitada.
 
------> Tenho que por as letras corretas visualmente na tela, para o usuário ver qual palavra está se formando.
+----> O QUE AINDA PRECISA SER RESOLVIDO NO PROJETO <----
+
+  -->Ainda tenho que verificar letras iguais e verificar o final do jogos quando a lista de letras certas for igual a palavra correta.
+
+  -->Tenho que verificar quando o usuário digitar duas letras iguais quando errar ou quando acertar para assim por um aviso na tela
+     dizendo que o usuário já utilizou essa letra digitada.
+
+  --> Tenho que por as letras corretas visualmente na tela, para o usuário ver qual palavra está se formando.
