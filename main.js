@@ -1,10 +1,16 @@
 const cabeca = document.querySelector(".cabeca");
 const tronco = document.querySelector(".tronco");
-const braco = document.querySelectorAll(".braco");
-const perna = document.querySelectorAll(".perna");
-const enviar = document.querySelector(".submit");
-const input = document.querySelector(".letra");
 
+const braco = document.querySelectorAll(".braco");
+const bracoEsquerdo = document.querySelector(".braco-esquerdo");
+const bracoDireito = document.querySelector(".braco-direito");
+
+const perna = document.querySelectorAll(".perna");
+const pernaEsquerda = document.querySelector(".perna-esquerda");
+const pernaDireita = document.querySelector(".perna-direita");
+const enviar = document.querySelector(".submit");
+
+const input = document.querySelector(".letra");
 const assunto = ["cidade", "frutas", "linguagens"];
 
 const objPalavra = {
@@ -40,36 +46,52 @@ const assuntoEscolhido = objPalavra[`${assuntoFinal}`];
 const palavraCorreta = assuntoEscolhido[Math.floor(Math.random() * 6)];
 console.log(palavraCorreta);
 
-const lista = palavraCorreta.split("");
-console.log(lista);
+// const lista = palavraCorreta.split("");
+// console.log(lista);
 
-const array = lista;
-const verifica = array.indexOf("s");
-console.log(verifica);
+const arrayCorreto = palavraCorreta.split("");
+
 const letraCorreta = [];
-const letraErrado = [];
+const letraErrada = [];
+let contador = 0;
+// pega cada letra inserida no meu input
+function pegaCompara() {
+    enviar.addEventListener("click", (elemento) => {
+        elemento.preventDefault();
+        if (palavraCorreta.includes(input.value)) {
+            letraCorreta.push(input.value);
+            console.log(letraCorreta);
+            input.value = "";
+        } else {
+            letraErrada.push(input.value);
 
-lista.forEach((elemento) => {
-    if (elemento === input.value) {
-    }
-});
+            if (letraErrada.length === 1) {
+                membro = cabeca;
+            } else if (letraErrada.length === 2) {
+                membro = tronco;
+            } else if (letraErrada.length === 3) {
+                membro = bracoEsquerdo;
+            } else if (letraErrada.length === 4) {
+                membro = bracoDireito;
+            } else if (letraErrada.length === 5) {
+                membro = pernaEsquerda;
+            } else if (letraErrada.length === 6) {
+                membro = pernaDireita;
+            }
+            apareceCorpo(membro);
+        }
 
-enviar.addEventListener("click", (elemento) => {
-    elemento.preventDefault();
-    input.value = "";
-});
+        input.value = "";
+    });
+}
 
-// const achei = palavras.findIndex((nome) => {
-//     if (nome === "pereira") {
-//         return nome;
-//     }
-// });
+function apareceCorpo(membro) {
+    membro.style.display = "block";
+}
 
-//percorre cada letra da minha string dentro do meu array
-// const lista = ["alsjdflkaj"];
+function compara() {
+    letraErrada.find();
+}
+compara();
 
-// lista.forEach((elemento) => {
-//     for (let letra = 0; letra < elemento.length; letra++) {
-//         console.log(elemento[letra]);
-//     }
-// });
+pegaCompara();
