@@ -15,5 +15,6 @@ e posições finais.
 
 
 ----> O QUE AINDA PRECISA SER RESOLVIDO NO PROJETO <----
+  
   -->Tenho que verificar quando o usuário digitar duas letras iguais quando errar ou quando acertar para assim por um aviso na tela
      dizendo que o usuário já utilizou essa letra digitada.
