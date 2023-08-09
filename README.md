@@ -15,10 +15,5 @@ e posições finais.
 
 
 ----> O QUE AINDA PRECISA SER RESOLVIDO NO PROJETO <----
-
-  -->Ainda tenho que verificar letras iguais e verificar o final do jogos quando a lista de letras certas for igual a palavra correta.
-
   -->Tenho que verificar quando o usuário digitar duas letras iguais quando errar ou quando acertar para assim por um aviso na tela
      dizendo que o usuário já utilizou essa letra digitada.
-
-  --> Tenho que por as letras corretas visualmente na tela, para o usuário ver qual palavra está se formando.
