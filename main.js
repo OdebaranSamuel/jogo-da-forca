@@ -114,11 +114,11 @@ function ganhouOuPerdeu() {
     const container = document.querySelector(".palavra-secreta-container");
     let mensagem = "";
     if (letraErrada.length === 6) {
-        mensagem = "voce perdeu";
+        mensagem = "você perdeu!";
     }
-    // o innerText ja me tras o texto dentro do meu container, ele ignora os spans e me trás somento o texto
+    // o innerText ja me trás o texto dentro do meu container, ele ignora os spans e me trás somento o texto
     if (palavraCorreta === container.innerText) {
-        mensagem = "voce ganhou";
+        mensagem = "você ganhou!!";
     }
     if (mensagem) {
         document.querySelector("#mensagem").innerHTML = mensagem;
