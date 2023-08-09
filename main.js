@@ -11,7 +11,7 @@ const pernaDireita = document.querySelector(".perna-direita");
 const enviar = document.querySelector(".submit");
 
 const input = document.querySelector(".letra");
-const assunto = ["cidade", "frutas", "linguagens"];
+const assunto = ["cidade", "frutas", "idiomas"];
 
 const objPalavra = {
     cidade: [
@@ -23,14 +23,7 @@ const objPalavra = {
         "paraty",
     ],
     frutas: ["maça", "pera", "uva", "banana", "cacau", "acerola"],
-    linguagens: [
-        "portugues",
-        "espanhol",
-        "arabe",
-        "frances",
-        "ingles",
-        "grego",
-    ],
+    idiomas: ["portugues", "espanhol", "arabe", "frances", "ingles", "grego"],
 };
 
 //pego um numero aleatrio do meu array de 0 a 2, que é o tamanho do meu array
@@ -53,18 +46,18 @@ const arrayCorreto = palavraCorreta.split("");
 
 const letraCorreta = [];
 const letraErrada = [];
-let contador = 0;
+const letraRepetida = [];
+
 // pega cada letra inserida no meu input
-function pegaCompara() {
+function desenha() {
     enviar.addEventListener("click", (elemento) => {
         elemento.preventDefault();
         if (palavraCorreta.includes(input.value)) {
             letraCorreta.push(input.value);
-            console.log(letraCorreta);
+            mostraLetraCerta();
             input.value = "";
         } else {
             letraErrada.push(input.value);
-
             if (letraErrada.length === 1) {
                 membro = cabeca;
             } else if (letraErrada.length === 2) {
@@ -80,6 +73,7 @@ function pegaCompara() {
             }
             apareceCorpo(membro);
         }
+        ganhouOuPerdeu();
 
         input.value = "";
     });
@@ -89,9 +83,52 @@ function apareceCorpo(membro) {
     membro.style.display = "block";
 }
 
-function compara() {
-    letraErrada.find();
+function tema() {
+    alert(`Bem vindo ao jogo da FORCA o tema é sobre ${assuntoFinal}`);
 }
-compara();
 
-pegaCompara();
+// function verificaLetraIgual() {
+//     for (var i = 0; i < letraErrada.length; i++) {
+//         if (letraErrada.length != 0) {
+//             if (letraErrada[i] == input.value) {
+//                 letraRepetida.push(letraErrada[i]);
+//                 avisoLetraRepetida();
+//             }
+//         }
+//     }
+// }
+
+function mostraLetraCerta() {
+    const container = document.querySelector(".palavra-secreta-container");
+    container.innerHTML = " ";
+    arrayCorreto.forEach((letra) => {
+        if (letraCorreta.includes(letra)) {
+            container.innerHTML += `<span>${letra}</span>`;
+        } else {
+            container.innerHTML += `<span>_</span>`;
+        }
+    });
+}
+
+function ganhouOuPerdeu() {
+    const container = document.querySelector(".palavra-secreta-container");
+    let mensagem = "";
+    if (letraErrada.length === 6) {
+        mensagem = "voce perdeu";
+    }
+    // o innerText ja me tras o texto dentro do meu container, ele ignora os spans e me trás somento o texto
+    if (palavraCorreta === container.innerText) {
+        mensagem = "voce ganhou";
+    }
+    if (mensagem) {
+        document.querySelector("#mensagem").innerHTML = mensagem;
+        document.querySelector(".popup-container").style.display = " flex";
+    }
+}
+
+function reiniciarJogo() {
+    //aqui eu recarrego a minha página
+    window.location.reload();
+}
+tema();
+desenha();

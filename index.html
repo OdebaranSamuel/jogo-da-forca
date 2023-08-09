@@ -14,7 +14,9 @@
  
 
     <main class="container">
-       
+        
+        <div class="palavra-secreta-container"></div>
+
         <svg width="400" height="500" class="svg"> 
             <line x1="0" y1="400" x2="400" y2="400" style="stroke:#8FACC0;stroke-width:3"></line>
             <line x1="50" y1="400" x2="50" y2="100" style="stroke:#8FACC0;stroke-width:3"></line>
@@ -28,13 +30,21 @@
             <line class="perna perna-direita" x1="150" y1="250" x2="170" y2="320" style="stroke:rgb(255, 255, 255);stroke-width:3"></line>
         </svg>
         <form>
-            <label for="input-letra">Digite uma letra ou a palavra correta</label>
+            <label for="input-letra">Digite uma letra</label>
             <input class="letra" type="text" id="input-letra">
             <input class="submit" type="submit">
         </form>
-      
+    
     </main>
 
+    <div class="popup-container">
+        <div class="popup">
+          <h2 id="mensagem"></h2>
+          <button id="btn-jogar" onclick="reiniciarJogo()">
+            Jogar novamente
+          </button>
+        </div>
+      </div>
     <script src="main.js"></script>
 </body>
 </html>
