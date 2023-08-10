@@ -26,21 +26,13 @@ const objPalavra = {
     idiomas: ["portugues", "espanhol", "arabe", "frances", "ingles", "grego"],
 };
 
-//pego um numero aleatrio do meu array de 0 a 2, que é o tamanho do meu array
 const assuntoAleatorio = Math.floor(Math.random() * assunto.length);
 
-// acessando o meu array assunto com o numero dado pelo assunto
 const assuntoFinal = assunto[assuntoAleatorio];
 
-//acessando meu objeto e minha lista dentro desse objeto
 const assuntoEscolhido = objPalavra[`${assuntoFinal}`];
 
-//aqui estou acessando a minha lista dentro do meu objeto e pegando um elemento aleatoriamente
 const palavraCorreta = assuntoEscolhido[Math.floor(Math.random() * 6)];
-console.log(palavraCorreta);
-
-// const lista = palavraCorreta.split("");
-// console.log(lista);
 
 const arrayCorreto = palavraCorreta.split("");
 
@@ -48,14 +40,12 @@ const letraCorreta = [];
 const letraErrada = [];
 const letraRepetida = [];
 
-// pega cada letra inserida no meu input
 function desenha() {
     enviar.addEventListener("click", (elemento) => {
         elemento.preventDefault();
         if (palavraCorreta.includes(input.value)) {
             letraCorreta.push(input.value);
             mostraLetraCerta();
-            input.value = "";
         } else {
             letraErrada.push(input.value);
             if (letraErrada.length === 1) {
@@ -74,7 +64,6 @@ function desenha() {
             apareceCorpo(membro);
         }
         ganhouOuPerdeu();
-
         input.value = "";
     });
 }
@@ -84,19 +73,9 @@ function apareceCorpo(membro) {
 }
 
 function tema() {
-    alert(`Bem vindo ao jogo da FORCA o tema é sobre ${assuntoFinal}`);
+    const tema = document.querySelector(".tema");
+    tema.innerHTML = `O tema é sobre ${assuntoFinal}`;
 }
-
-// function verificaLetraIgual() {
-//     for (var i = 0; i < letraErrada.length; i++) {
-//         if (letraErrada.length != 0) {
-//             if (letraErrada[i] == input.value) {
-//                 letraRepetida.push(letraErrada[i]);
-//                 avisoLetraRepetida();
-//             }
-//         }
-//     }
-// }
 
 function mostraLetraCerta() {
     const container = document.querySelector(".palavra-secreta-container");
@@ -116,7 +95,7 @@ function ganhouOuPerdeu() {
     if (letraErrada.length === 6) {
         mensagem = "você perdeu!";
     }
-    // o innerText ja me trás o texto dentro do meu container, ele ignora os spans e me trás somento o texto
+
     if (palavraCorreta === container.innerText) {
         mensagem = "você ganhou!!";
     }
@@ -127,7 +106,6 @@ function ganhouOuPerdeu() {
 }
 
 function reiniciarJogo() {
-    //aqui eu recarrego a minha página
     window.location.reload();
 }
 tema();

@@ -33,6 +33,10 @@ h1 {
     background-color: #616b74;
     border-radius: 5px;
 }
+.tema {
+    color: #8facc0;
+    font-size: 20px;
+}
 
 .tronco,
 .cabeca,
@@ -46,7 +50,7 @@ h1 {
 label {
     color: white;
     margin-bottom: 5px;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 input {
